@@ -31,12 +31,10 @@ public class TicTacToe {
                             for (int i = 0; i < movesList.size(); i++) {
                                 repeatList.set(i, false);
                             }
-                            menuChoice = 0;
                             exitChoice = 0;
                             choice = 0;
                             player = 1;
                             winCondition = 0;
-                            MenuDecision();
                             Output();
                             TicTacToeRunner();
                             break;
