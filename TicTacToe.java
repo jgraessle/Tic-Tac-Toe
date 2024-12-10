@@ -13,6 +13,25 @@ public class TicTacToe {
     int winCondition = 0;
     ArrayList<String> movesList = new ArrayList<>(Arrays.asList("1", "2", "3", "4", "5", "6", "7", "8", "9"));
     ArrayList<Boolean> repeatList = new ArrayList<>(Arrays.asList(false, false, false, false, false, false, false, false, false));
+    String playerOneSymbol = "";
+    String playerTwoSymbol = "";
+
+    public void CharacterMenu() {
+        in.nextLine();
+        while (playerOneSymbol.isBlank() == true || playerOneSymbol.length() != 1) {
+            System.out.println("Please select a one character symbol for player 1 that isn't blank: ");
+            playerOneSymbol = in.nextLine();
+        }
+        while (playerTwoSymbol.isBlank() == true || playerTwoSymbol.length() != 1) {
+            if (menuChoice == 1) {
+                System.out.println("Please select a one character symbol for player 2 that isn't blank: ");
+            }
+            else {
+                System.out.println("Please select a one character symbol for the computer that isn't blank: ");
+            }
+            playerTwoSymbol = in.nextLine();
+        }
+    }
 
     public void ExitMenu() {
         System.out.println("Would you like to continue playing or exit the game?");
@@ -150,31 +169,31 @@ public class TicTacToe {
         }
         if (player == 1) {
             switch (choice) {
-                case 1: movesList.set(0, "X");
+                case 1: movesList.set(0, playerOneSymbol);
                 repeatList.set(0, true);
                 break;
-                case 2: movesList.set(1, "X");
+                case 2: movesList.set(1, playerOneSymbol);
                 repeatList.set(1, true);
                 break;
-                case 3: movesList.set(2, "X");
+                case 3: movesList.set(2, playerOneSymbol);
                 repeatList.set(2, true);
                 break;
-                case 4: movesList.set(3, "X");
+                case 4: movesList.set(3, playerOneSymbol);
                 repeatList.set(3, true);
                 break;
-                case 5: movesList.set(4, "X");
+                case 5: movesList.set(4, playerOneSymbol);
                 repeatList.set(4, true);
                 break;
-                case 6: movesList.set(5, "X");
+                case 6: movesList.set(5, playerOneSymbol);
                 repeatList.set(5, true);
                 break;
-                case 7: movesList.set(6, "X");
+                case 7: movesList.set(6, playerOneSymbol);
                 repeatList.set(6, true);
                 break;
-                case 8: movesList.set(7, "X");
+                case 8: movesList.set(7, playerOneSymbol);
                 repeatList.set(7, true);
                 break;
-                case 9: movesList.set(8, "X");
+                case 9: movesList.set(8, playerOneSymbol);
                 repeatList.set(8, true);
                 break;
                 default: System.out.println("Error with player 1 switch loop");
@@ -183,31 +202,31 @@ public class TicTacToe {
         }
         else {
             switch (choice) {
-                case 1: movesList.set(0, "O");
+                case 1: movesList.set(0, playerTwoSymbol);
                 repeatList.set(0, true);
                 break;
-                case 2: movesList.set(1, "O");
+                case 2: movesList.set(1, playerTwoSymbol);
                 repeatList.set(1, true);
                 break;
-                case 3: movesList.set(2, "O");
+                case 3: movesList.set(2, playerTwoSymbol);
                 repeatList.set(2, true);
                 break;
-                case 4: movesList.set(3, "O");
+                case 4: movesList.set(3, playerTwoSymbol);
                 repeatList.set(3, true);
                 break;
-                case 5: movesList.set(4, "O");
+                case 5: movesList.set(4, playerTwoSymbol);
                 repeatList.set(4, true);
                 break;
-                case 6: movesList.set(5, "O");
+                case 6: movesList.set(5, playerTwoSymbol);
                 repeatList.set(5, true);
                 break;
-                case 7: movesList.set(6, "O");
+                case 7: movesList.set(6, playerTwoSymbol);
                 repeatList.set(6, true);
                 break;
-                case 8: movesList.set(7, "O");
+                case 8: movesList.set(7, playerTwoSymbol);
                 repeatList.set(7, true);
                 break;
-                case 9: movesList.set(8, "O");
+                case 9: movesList.set(8, playerTwoSymbol);
                 repeatList.set(8, true);
                 break;
                 default: System.out.println("Error with player 1 switch loop");
@@ -263,6 +282,7 @@ public class TicTacToe {
 public static void main(String[] args){
     TicTacToe tictactoe = new TicTacToe();
     tictactoe.MenuDecision();
+    tictactoe.CharacterMenu();
     tictactoe.Output();
     tictactoe.TicTacToeRunner();
 }
